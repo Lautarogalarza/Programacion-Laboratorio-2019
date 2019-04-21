@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1555873900 source:c:\users\lautaro\desktop\32bit\programacion-laboratorio-2019\clase7\vectores paralelos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empleado.h"
+
+1555873981 c:\users\lautaro\desktop\32bit\programacion-laboratorio-2019\clase7\vectores paralelos\empleado.h
+
