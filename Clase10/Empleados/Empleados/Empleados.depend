@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1555502399 source:d:\galarza\programacion-laboratorio-2019-master\clase10\empleados\empleado.c
+	"empleado.h"
+
+1555503187 d:\galarza\programacion-laboratorio-2019-master\clase10\empleados\empleado.h
+
+1555867385 source:c:\users\lautaro\desktop\32bit\programacion-laboratorio-2019\clase10\empleados\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"empleado.h"
+
+1555865553 c:\users\lautaro\desktop\32bit\programacion-laboratorio-2019\clase10\empleados\empleado.h
+
+1555867899 source:c:\users\lautaro\desktop\32bit\programacion-laboratorio-2019\clase10\empleados\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+	"empleado.h"
+

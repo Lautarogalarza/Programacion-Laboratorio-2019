@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1555891540 source:c:\users\lautaro\desktop\32bit\programacion-laboratorio-2019\clase8\estructuras1004 - copia\ordenamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
