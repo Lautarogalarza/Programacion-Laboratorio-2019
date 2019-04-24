@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1556119206 source:d:\galarza\clase 12\practica\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Empleados.h"
+
+1556119311 source:d:\galarza\clase 12\practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Empleados.h"
+
+1556118315 d:\galarza\clase 12\practica\empleados.h
+
