@@ -10,11 +10,13 @@ int menu()
 {
     int opcion;
 
+
     system("cls");
     printf("  *** ABM Empleados ***\n\n");
     printf("1- Alta Empleado\n");
     printf("2- Listar Empleados\n");
-    printf("3- Salir\n\n");
+    printf("3- Modificar Empleados\n");
+    printf("4- Salir\n\n");
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
 
@@ -142,6 +144,8 @@ void altaEmpleado(eEmpleado lista[], int tam, eSector sectores[], int tamSector,
 
             printf("Ingrese salario: ");
             scanf("%f", &lista[indice].salario );
+
+            printf("\nIngrese su fecha de ingreso\n");
             cargarFecha(lista,indice);
 
             system("cls");
@@ -242,16 +246,187 @@ void cargarFecha(eEmpleado lista[],int indice)
     int auxMes;
     int auxAnio;
 
-    printf("\nIngrese su fecha de ingreso\n");
-
     printf("Ingrese dia: ");
     scanf("%d",&auxDia);
-    printf("Ingrese mes");
-    scanf("%d",&auxMes);
-    printf("Ingrese anio");
-    scanf("%d",&auxAnio);
+
+    while(auxDia<=0 || auxDia>=31)
+    {
+        printf("Por favor ingrese un dia valido entre 1 y 30: \n");
+        printf("Ingrese dia: ");
+        scanf("%d",&auxDia);
+    }
 
     lista[indice].fechaIngreso.dia=auxDia;
+
+    printf("Ingrese mes:");
+    scanf("%d",&auxMes);
+
+    while(auxMes<1 || auxMes>12)
+    {
+        printf("Por favor ingrese un mes valido entre 1 y 12: \n");
+        printf("Ingrese mes: ");
+        scanf("%d",&auxMes);
+    }
+
     lista[indice].fechaIngreso.mes=auxMes;
+
+
+    printf("Ingrese anio: ");
+    scanf("%d",&auxAnio);
+    while(auxAnio<1960 || auxAnio>2030)
+    {
+        printf("Por favor ingrese un anio valido entre 1960 y 2030: \n");
+        printf("Ingrese anio: ");
+        scanf("%d",&auxAnio);
+    }
+
+
     lista[indice].fechaIngreso.anio=auxAnio;
+}
+
+
+void modificarEmpleado(eEmpleado lista[], int tam)
+{
+   int respuesta;
+   int legajo;
+    int i;
+    int indice;
+    for(i=0; i<tam; i++)
+    {
+        if(lista[i].isEmpty==1)
+        {
+            printf("\nLegajo empleado %d",lista[i].legajo);
+        }
+    }
+
+    printf("\nQue empleado queres modificar? (Ingresar Legajo Usuario) ");
+    scanf("%d",&legajo);
+    fflush(stdin);
+
+    //for(i=0; i<tam; i++)//USAR BUSCAR EMPLEADO
+    //{
+        indice=buscarEmpleado(lista,tam,legajo);
+        if(legajo==lista[indice].legajo )
+        {
+            printf("Esta seguro que quiere modificar a este usuario? <1.Si-2.No>\n");
+            scanf("%d",&respuesta);
+
+            switch(respuesta)
+            {
+            case 1:
+
+                for (i=0; i<tam; i++)
+                {
+                    if(lista[i].legajo==legajo && lista[i].isEmpty==1)
+                    {
+                        modfEmpleado(lista,i);
+
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                printf("Modificacion cancelada");
+                break;
+            default:
+                break;
+
+
+            }
+        }
+        //break;
+
+    //}
+
+
+}
+
+
+void modfEmpleado(eEmpleado lista[], int indice)
+{
+    int opcion;
+    char auxNewName[51];
+     char auxNewLastName[51];
+    char auxNewSex;
+    float auxNewSalary;
+    int auxNewSector;
+
+
+    do
+    {
+        system("cls");
+        printf("\n1.Modificar Nombre\n");
+        printf("2.Modificar Apellido\n");
+        printf("3.Modificar Salario\n");
+        printf("4.Modificar Sexo\n");
+        printf("5.Modificar Sector\n");
+        printf("6.Modificar Fecha de ingreso\n");
+        printf("7.Salir\n");
+        scanf("%d",&opcion);
+
+
+        switch(opcion)
+        {
+        case 1:
+            printf("Ingrese nuevo nombre: ");
+
+            fflush(stdin);
+
+            gets(auxNewName);
+
+            strcpy(lista[indice].nombre, auxNewName);
+            break;
+
+        case 2:
+
+            printf("Ingrese nuevo apellido: ");
+
+            fflush(stdin);
+
+            gets(auxNewLastName);
+
+            strcpy(lista[indice].apellido, auxNewLastName);
+            break;
+
+        case 3:
+           printf("Ingrese nuevo sueldo: ");
+
+            scanf("%f", &auxNewSalary );
+
+            lista[indice].salario=auxNewSalary;
+            break;
+        case 4:
+
+           printf("Ingrese nuevo sexo: ");
+          fflush(stdin);
+          scanf("%c", &auxNewSex );
+
+            lista[indice].sexo=auxNewSex;
+
+            break;
+        case 5:
+            system("cls");
+            //mostrarSectores(sectores,tamSector);
+            printf("\nIngrese sector: ");
+            scanf("%d", &auxNewSector );
+            lista[indice].idSector=auxNewSector;
+            break;
+        case 6:
+
+            printf("Ingrese nueva fecha de ingreso");
+            cargarFecha(lista,indice);
+            break;
+        case 7:
+
+            break;
+        default:
+            printf("ERROR!! por favor ingrese una de las opciones validaas <1-5>\n");
+            break;
+
+
+        }
+
+
+    }while(opcion!=7);
+
 }

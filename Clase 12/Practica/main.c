@@ -5,7 +5,7 @@
 #include <conio.h>
 #define TAMSECTOR 5
 #define TAMMENU 10
-#define TAMLISTA 5
+#define TAMLISTA 2
 #include "Empleados.h"
 
 
@@ -19,6 +19,7 @@ int main()
     char seguir='s';
     char confirma;
     int id=1;
+    int flagEmp=0;
 
 
 
@@ -34,13 +35,27 @@ int main()
         case 1:
             altaEmpleado(lista,TAMLISTA,sector,TAMSECTOR,id);
             id++;
+            flagEmp=1;
             system("pause");
             break;
         case 2:
+            if(flagEmp==1)
+            {
+
             mostrarEmpleados(lista,TAMLISTA,sector,TAMSECTOR);
             system("pause");
+
+            }
+            else
+            {
+             printf("\nPor favor cargue un empleado antes de mostrar\n\n");
+             system("pause");
+            }
             break;
         case 3:
+          modificarEmpleado(lista,TAMLISTA);
+            break;
+        case 4:
             printf("\nConfirma salida s/n?: ");
             fflush(stdin);
             confirma = getche();
@@ -51,15 +66,12 @@ int main()
             }
             break;
         default:
+
             printf("\n Opcion invalida\n\n");
+            system("pause");
             break;
 
         }
-
-
-
-
-
 
     }
     while(seguir == 's');

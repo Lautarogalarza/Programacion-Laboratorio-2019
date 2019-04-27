@@ -57,5 +57,7 @@ void mostrarSectores(eSector sectores[],int tam);
 int obtenerSector(eSector sectores[], int tam, int idSector, char desc[]);
 void mostrarEmpleado(eSector sectores[], int tamSector, eEmpleado lista);
 void cargarFecha(eEmpleado lista[],int indice);
+void modfEmpleado(eEmpleado lista[], int tam);
+void modificarEmpleado(eEmpleado lista[], int indice);
 
 #endif // EMPLEADOS_H_INCLUDED
