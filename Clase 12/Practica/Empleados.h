@@ -6,15 +6,15 @@ typedef struct
     int id;
     char descripcion[20];
 
-}eSector;
+} eSector;
 
 typedef struct
 {
     int codigoMenu;
-	char descripcion[51];
+    char descripcion[51];
     float Importe;
 
-}eMenu;
+} eMenu;
 
 typedef struct
 {
@@ -22,15 +22,15 @@ typedef struct
     int mes;
     int anio;
 
-}eFecha;
+} eFecha;
 
 typedef struct
 {
     int codigoAlmuerzo;
-	int codigoMenu;
-	int legajoEmpleado;
-	eFecha fecha;
-}eAlmuerzo;
+    int codigoMenu;
+    int legajoEmpleado;
+    eFecha fecha;
+} eAlmuerzo;
 
 typedef struct
 {
@@ -43,9 +43,19 @@ typedef struct
     int idSector;
     int isEmpty;
 
-}eEmpleado;
+} eEmpleado;
 
 
 void initMenu(eMenu menues[], int tam);
+void initSector(eSector sectores[], int tam);
+int buscarLibre(eEmpleado lista[], int tam);
+void inicializarEmpleados(eEmpleado lista[], int tam);
+int menu();
+void altaEmpleado(eEmpleado lista[], int tam, eSector sectores[], int tamSector,int id);
+void mostrarEmpleados(eEmpleado lista[], int tam, eSector sectores[], int tamSector);
+void mostrarSectores(eSector sectores[],int tam);
+int obtenerSector(eSector sectores[], int tam, int idSector, char desc[]);
+void mostrarEmpleado(eSector sectores[], int tamSector, eEmpleado lista);
+void cargarFecha(eEmpleado lista[],int indice);
 
 #endif // EMPLEADOS_H_INCLUDED
