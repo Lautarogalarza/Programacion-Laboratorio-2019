@@ -5,7 +5,7 @@
 #include <conio.h>
 #define TAMSECTOR 5
 #define TAMMENU 10
-#define TAMLISTA 2
+#define TAMLISTA 100
 #include "Empleados.h"
 
 
@@ -18,7 +18,7 @@ int main()
     eEmpleado lista[TAMLISTA];
     char seguir='s';
     char confirma;
-    int id=1;
+    int id;
     int flagEmp=0;
 
 
@@ -27,35 +27,81 @@ int main()
     initSector(sector,TAMSECTOR);
     inicializarEmpleados(lista,TAMLISTA);
 
+    //initEmp(lista);
+
+
     do
     {
+
 
         switch(menu())
         {
         case 1:
+
+            id=generarNextId();
             altaEmpleado(lista,TAMLISTA,sector,TAMSECTOR,id);
-            id++;
             flagEmp=1;
             system("pause");
+
+
             break;
         case 2:
             if(flagEmp==1)
             {
 
-            mostrarEmpleados(lista,TAMLISTA,sector,TAMSECTOR);
-            system("pause");
+                mostrarEmpleados(lista,TAMLISTA,sector,TAMSECTOR);
+                system("pause");
 
             }
             else
             {
-             printf("\nPor favor cargue un empleado antes de mostrar\n\n");
-             system("pause");
+                printf("\nPor favor cargue un empleado antes de mostrar\n\n");
+                system("pause");
             }
             break;
         case 3:
-          modificarEmpleado(lista,TAMLISTA);
+            if(flagEmp==1)
+            {
+                modificarEmpleado(lista,TAMLISTA);
+
+            }
+            else
+            {
+                printf("\nPor favor cargue un empleado antes de mostrar\n\n");
+                system("pause");
+            }
             break;
         case 4:
+            if(flagEmp==1)
+            {
+
+                bajaEmpleado(lista,TAMLISTA);
+
+                if(buscarEmpleado(lista,TAMLISTA,id)==-1)
+                {
+                    flagEmp=0;
+                }
+
+            }
+            else
+            {
+                printf("\nPor favor cargue un empleado antes de mostrar\n\n");
+                system("pause");
+            }
+            break;
+            case 5:
+            if(flagEmp==1)
+            {
+
+                ordenarEmpleados(lista,TAMLISTA);
+            }
+            else
+            {
+                printf("\nPor favor cargue un empleado antes de mostrar\n\n");
+                system("pause");
+            }
+            break;
+        case 6:
             printf("\nConfirma salida s/n?: ");
             fflush(stdin);
             confirma = getche();
@@ -80,16 +126,11 @@ int main()
 
     return 0;
 }
+
 /*printf("\n\n");
 printf("ID    DESCRIPCION    IMPORTE\n");
 for(int i=0;i<TAMMENU;i++)
 {
     printf("%2d   %8s        %.2f \n" , menu[i].codigoMenu , menu[i].descripcion , menu[i].Importe);
-}
-
-printf("\n\n");
-printf("ID    DESCRIPCION  \n");
-for(int i=0;i<TAMSECTOR;i++)
-{
-    printf("%2d   %8s   \n" , sector[i].id , sector[i].descripcion);
 }*/
+

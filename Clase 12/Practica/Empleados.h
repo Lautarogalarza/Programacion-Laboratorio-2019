@@ -1,6 +1,8 @@
 #ifndef EMPLEADOS_H_INCLUDED
 #define EMPLEADOS_H_INCLUDED
 
+#include "input.h"
+
 typedef struct
 {
     int id;
@@ -48,16 +50,28 @@ typedef struct
 
 void initMenu(eMenu menues[], int tam);
 void initSector(eSector sectores[], int tam);
-int buscarLibre(eEmpleado lista[], int tam);
 void inicializarEmpleados(eEmpleado lista[], int tam);
+void initEmp(eEmpleado lista[]);
+
+int buscarLibre(eEmpleado lista[], int tam);
+
 int menu();
-void altaEmpleado(eEmpleado lista[], int tam, eSector sectores[], int tamSector,int id);
-void mostrarEmpleados(eEmpleado lista[], int tam, eSector sectores[], int tamSector);
-void mostrarSectores(eSector sectores[],int tam);
-int obtenerSector(eSector sectores[], int tam, int idSector, char desc[]);
-void mostrarEmpleado(eSector sectores[], int tamSector, eEmpleado lista);
+
+int altaEmpleado(eEmpleado lista[], int tam, eSector sectores[], int tamSector,int id);
+
+ int generarNextId();
+
 void cargarFecha(eEmpleado lista[],int indice);
 void modfEmpleado(eEmpleado lista[], int tam);
 void modificarEmpleado(eEmpleado lista[], int indice);
+void bajaEmpleado(eEmpleado lista[], int tam);
+
+void mostrarEmpleado(eSector sectores[], int tamSector, eEmpleado lista);
+void mostrarEmpleados(eEmpleado lista[], int tam, eSector sectores[], int tamSector);
+void mostrarSectores(eSector sectores[],int tam);
+void ordenarEmpleados(eEmpleado lista[],int tam );
+
+int obtenerSector(eSector sectores[], int tam, int idSector, char desc[]);
+
 
 #endif // EMPLEADOS_H_INCLUDED
