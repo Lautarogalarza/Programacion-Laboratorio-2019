@@ -16,10 +16,8 @@ int main()
     eMenu menues[TAMMENU];
     eSector sector[TAMSECTOR];
     eEmpleado lista[TAMLISTA];
-    char seguir='s';
-    char confirma;
-    int id;
-    int flagEmp=0;
+    int opcion;
+
 
 
 
@@ -34,63 +32,67 @@ int main()
     {
 
 
-        switch(menu())
+        printf("INGRESE UNA OPCION PARA COMENZAR\n");
+        printf("  *** ABM Empleados ***\n\n");
+        printf("1- Alta Empleado\n");
+        printf("2- Listar Empleados\n");
+        printf("3- Modificar Empleados\n");
+        printf("4- Baja Empleados\n");
+        printf("5- Ordenar Empleados\n");
+        printf("6- Salir\n\n");
+        printf("Ingrese opcion: ");
+        fflush(stdin);
+        scanf("%d", &opcion);
+
+
+        switch(opcion)
         {
         case 1:
 
-            id=generarNextId();
-            altaEmpleado(lista,TAMLISTA,sector,TAMSECTOR,id);
-            flagEmp=1;
-            system("pause");
-
+            altaEmpleado(lista,TAMLISTA,sector,TAMSECTOR);
 
             break;
         case 2:
-            if(flagEmp==1)
+            if(hayEmpleadosCargados(lista,TAMLISTA)==0)
             {
-
+                system("cls");
                 mostrarEmpleados(lista,TAMLISTA,sector,TAMSECTOR);
-                system("pause");
 
             }
             else
             {
                 printf("\nPor favor cargue un empleado antes de mostrar\n\n");
-                system("pause");
+
             }
             break;
         case 3:
-            if(flagEmp==1)
+            if(hayEmpleadosCargados(lista,TAMLISTA)==0)
             {
-                modificarEmpleado(lista,TAMLISTA);
+                system("cls");
+                modificarEmpleado(lista,TAMLISTA,sector,TAMSECTOR);
 
             }
             else
             {
                 printf("\nPor favor cargue un empleado antes de mostrar\n\n");
-                system("pause");
+
             }
             break;
         case 4:
-            if(flagEmp==1)
+            if(hayEmpleadosCargados(lista,TAMLISTA)==0)
             {
-
+                system("cls");
                 bajaEmpleado(lista,TAMLISTA);
-
-                if(buscarEmpleado(lista,TAMLISTA,id)==-1)
-                {
-                    flagEmp=0;
-                }
 
             }
             else
             {
                 printf("\nPor favor cargue un empleado antes de mostrar\n\n");
-                system("pause");
+
             }
             break;
-            case 5:
-            if(flagEmp==1)
+        case 5:
+            if(hayEmpleadosCargados(lista,TAMLISTA)==0)
             {
 
                 ordenarEmpleados(lista,TAMLISTA);
@@ -98,29 +100,24 @@ int main()
             else
             {
                 printf("\nPor favor cargue un empleado antes de mostrar\n\n");
-                system("pause");
+
             }
             break;
         case 6:
-            printf("\nConfirma salida s/n?: ");
-            fflush(stdin);
-            confirma = getche();
-
-            if( tolower(confirma) == 's')
-            {
-                seguir = 'n';
-            }
+           printf("\nADIOS\n");
             break;
         default:
-
-            printf("\n Opcion invalida\n\n");
-            system("pause");
+            printf("\nERROR! Por favor ingrese una opcion valida <1-6>\n");
             break;
 
         }
 
+        fflush(stdin);
+        system("pause");
+        system("cls");
+
     }
-    while(seguir == 's');
+    while(opcion!=6);
 
 
 

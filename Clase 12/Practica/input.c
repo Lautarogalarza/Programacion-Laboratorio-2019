@@ -44,7 +44,7 @@ char getSexChar(char mensaje[],char mensajeError[],char* input)
     scanf("%c", &auxChar);
     auxChar=toupper(auxChar);
 
-    while(auxChar !='F' && auxChar !='M')
+    while( auxChar !='F' && auxChar !='M')
     {
         printf("\n%s ", mensajeError);
         printf("\n%s :", mensaje);
