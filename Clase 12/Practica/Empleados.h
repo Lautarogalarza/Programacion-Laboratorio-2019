@@ -86,4 +86,9 @@ int ordenarEmpleados(eEmpleado lista[],int tam );
 int obtenerSector(eSector sectores[], int tam, int idSector, char desc[]);
 
 
+//////////////////////////////////////////////////
+
+int altaAlmuerzo(eAlmuerzo lista[], int tam,eEmpleado listaEmpleado[], int tamEmpleado);
+
+
 #endif // EMPLEADOS_H_INCLUDED

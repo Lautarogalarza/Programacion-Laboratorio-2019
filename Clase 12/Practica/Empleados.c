@@ -353,7 +353,7 @@ int  modificarEmpleado(eEmpleado lista[], int tam, eSector listaSector[] ,int ta
     int auxLegajo;
     int i;
     int indice;
-    int existeEmpleado;
+    int existeEmpleado=0;
     int retorno=-1;
 
     for(i=0; i<tam; i++)
@@ -382,7 +382,7 @@ int  modificarEmpleado(eEmpleado lista[], int tam, eSector listaSector[] ,int ta
         {
         case 1:
 
-            modfEmpleado(lista,i,listaSector,tamSector);
+            modfEmpleado(lista,indice,listaSector,tamSector);
             retorno=0;
 
             break;
@@ -390,7 +390,6 @@ int  modificarEmpleado(eEmpleado lista[], int tam, eSector listaSector[] ,int ta
 
             printf("Modificacion cancelada");
             retorno=-1;
-
             break;
 
         }
@@ -438,6 +437,7 @@ void modfEmpleado(eEmpleado lista[], int indice, eSector listaSector[] ,int tamS
             fflush(stdin);
             getValidString("Ingrese nuevo nombre :","ERROR,ingrese el nombre nuevamente (solo letras)","ERROR, se exedio del limite de la cadena",auxNewName,1,51);
             stringToUpper(auxNewName);
+
             strcpy(lista[indice].nombre,auxNewName);
 
             printf("\nDato modificado\n");
@@ -491,7 +491,7 @@ void modfEmpleado(eEmpleado lista[], int indice, eSector listaSector[] ,int tamS
 
             break;
         default:
-            printf("ERROR!! por favor ingrese una de las opciones validaas <1-5>\n");
+            printf("ERROR!! por favor ingrese una de las opciones validaas <1-7>\n");
             break;
 
         }
@@ -589,4 +589,104 @@ int ordenarEmpleados(eEmpleado lista[],int tam )
 
     return retorno;
 }
+
+
+
+
+
+/*int altaAlmuerzo(eAlmuerzo lista[], int tam,eEmpleado listaEmpleado[], int tamEmpleado)
+{
+    int indice;
+    int respuesta;
+    int auxLegajo;
+    int auxIdMenu;
+    int myReturn=-1;
+
+
+    indice = buscarLibre(lista, tam);
+
+    if( indice == -1)
+    {
+
+        printf("\nNo hay lugar en el sistema\n");
+    }
+    else
+    {
+
+
+
+        fflush(stdin);
+        getValidString("\nIngrese nombre: ","\nError por favor solo ingrese caracteres","\nError se exedio del limite de caracteres\n",auxNombre,1,50);
+        stringToUpper(auxNombre);
+
+        strcpy(lista[indice].nombre,auxNombre);
+
+
+        fflush(stdin);
+        getValidString("Ingrese apellido: ","\nError por favor solo ingrese caracteres","\nError se exedio del limite de caracteres\n",auxApellido,1,50);
+        stringToUpper(auxApellido);
+
+        strcpy(lista[indice].apellido,auxApellido);
+
+
+        fflush(stdin);
+        getSexChar("ingrese sexo","Error ingrese sexo valido <F-M>\n",&auxSexo);
+
+        lista[indice].sexo=auxSexo;
+
+        fflush(stdin);
+        getValidFloat("Ingrese salario: ","\Eerror, solo numeros por favor\n",12.000,99.999,&auxSalario);
+
+        lista[indice].salario=auxSalario;
+
+        printf("\nIngrese su fecha de ingreso\n\n");
+        cargarFecha(lista,indice);
+
+        system("cls");
+        mostrarSectores(sectores,tamSector);
+
+        getValidInt("ingrese sector","\Eerror ingrese un sector valido  <1-5>\n",1,5,&auxSector);
+
+        lista[indice].idSector=auxSector;
+
+        fflush(stdin);
+        getValidInt("Esta seguro que quiere darle de alta a este empleado? <1.Si-2.No>","\Eerror ingrese un dato valido  <1-2>\n",1,2,&respuesta);
+
+
+        if(respuesta==1)
+        {
+
+            lista[indice].isEmpty = OCUPADO;
+
+            lista[indice].legajo=generarNextId();
+
+            printf("Alta empleado exitosa!!!\n\n");
+
+            myReturn=0;
+
+        }
+        else
+        {
+
+            printf("alta cancelada");
+
+        }
+    }
+
+    return myReturn;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
