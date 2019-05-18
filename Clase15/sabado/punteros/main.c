@@ -24,6 +24,7 @@ int main()
     int* Pnumero;
     Pnumero=&numero;
 
+
     int array[TAM]={5,23,12,41,89,201,900,99,80,1};
     int* pArray;
     pArray=array;
