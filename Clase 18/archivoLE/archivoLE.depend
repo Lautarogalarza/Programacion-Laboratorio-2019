@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1558534896 source:d:\galarza\programacion-laboratorio-2019\clase 18\archivole\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
