@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1553521432 source:e:\facultad\clase3\programacion\laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1553523746 source:e:\facultad\clase3\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1553687963 source:d:\galarza\programacion-laboratorio-2019\clase3\main.c
+	<stdio.h>
+	<stdlib.h>
+

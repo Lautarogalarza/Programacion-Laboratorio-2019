@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1554901678 source:d:\galarza\programacion-laboratorio-2019\clase8\estructuras\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
