@@ -68,29 +68,29 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
 {
 
-    Employee* nuevoEmpleado;
+    Employee* auxEmployee;
+    int cant;
 
-
-
-
-    while( !feof(pFile) && pArrayListEmployee!=NULL )
+    while(!feof(pFile))
     {
+        auxEmployee=employee_new();
+        cant=fread(auxEmployee,sizeof(Employee),1,pFile);
 
-        nuevoEmpleado = employee_new();
-
-     fread(nuevoEmpleado, sizeof(Employee), 1, pFile);
-
-    ll_add(pArrayListEmployee,nuevoEmpleado);
-
+        if (cant!=1)
+        {
+            break;
+        }
+        else
+        {
+            ll_add(pArrayListEmployee,auxEmployee);
+        }
 
     }
 
-
-
      printf("\n Empleados cargados correctamente (modo binario).\n\n");
-     fclose(pFile);
-     free(pFile);
 
+    free(pFile);
+    //free(auxEmployee);
 
     return 1;
 }

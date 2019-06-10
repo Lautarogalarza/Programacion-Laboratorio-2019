@@ -30,7 +30,7 @@ int main()
         printf("\n1.Cargar los datos de los empleados desde el archivo data.csv (modo texto)\n");
         printf("2.Cargar los datos de los empleados desde el archivo data.csv (modo binario)\n");
         printf("3.Alta de empleado\n");
-        printf("4.Modificar datos de empleado");
+        printf("4.Modificar datos de empleado\n");
         printf("5.Baja de empleado\n");
         printf("6.Listar empleados\n");
         printf("7.Ordenar empleados\n");
@@ -49,18 +49,21 @@ int main()
 
             break;
         case 2:
-             controller_loadFromBinary("data1.bin",listaEmpleados);
+             controller_loadFromBinary("data.bin",listaEmpleados);
             break;
         case 3:
 
-                controller_addEmployee(listaEmpleados);
+            controller_addEmployee(listaEmpleados);
 
             break;
         case 4:
 
+            modificar_Socios(listaEmpleados);
+
             break;
         case 5:
 
+            controller_removeEmployee(listaEmpleados);
             break;
         case 6:
 
@@ -77,7 +80,7 @@ int main()
             break;
         case 9:
 
-            controller_saveAsBinary("data1.bin",listaEmpleados);
+            controller_saveAsBinary("data.bin",listaEmpleados);
 
             break;
         case 10:

@@ -44,6 +44,10 @@
 		</Unit>
 		<Unit filename="Employee.h" />
 		<Unit filename="LinkedList.h" />
+		<Unit filename="UTN_INPUT.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="UTN_INPUT.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

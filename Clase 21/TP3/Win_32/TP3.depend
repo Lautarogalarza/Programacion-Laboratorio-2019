@@ -103,7 +103,7 @@
 	"LinkedList.h"
 	"Employee.h"
 
-1559977994 source:c:\users\lautaro\desktop\tp3\win_32\controller.c
+1560133369 source:c:\users\lautaro\desktop\tp3\win_32\controller.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -111,33 +111,33 @@
 	"parser.h"
 	"UTN_INPUT.h"
 
-1559747271 c:\users\lautaro\desktop\tp3\win_32\linkedlist.h
+1559968902 c:\users\lautaro\desktop\tp3\win_32\linkedlist.h
 
-1559881767 c:\users\lautaro\desktop\tp3\win_32\employee.h
+1559968902 c:\users\lautaro\desktop\tp3\win_32\employee.h
 
-1559889344 source:c:\users\lautaro\desktop\tp3\win_32\employee.c
+1559968902 source:c:\users\lautaro\desktop\tp3\win_32\employee.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Employee.h"
 
-1559970487 source:c:\users\lautaro\desktop\tp3\win_32\parser.c
+1560126256 source:c:\users\lautaro\desktop\tp3\win_32\parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Employee.h"
 	"parser.h"
 
-1559972520 source:c:\users\lautaro\desktop\tp3\win_32\main.c
+1560130058 source:c:\users\lautaro\desktop\tp3\win_32\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Controller.h"
 	"Employee.h"
 
-1559973668 c:\users\lautaro\desktop\tp3\win_32\controller.h
+1560132783 c:\users\lautaro\desktop\tp3\win_32\controller.h
 
-1559883775 c:\users\lautaro\desktop\tp3\win_32\parser.h
+1559968902 c:\users\lautaro\desktop\tp3\win_32\parser.h
 
 1557317979 source:c:\users\lautaro\desktop\practica tp\practica\utn_input.c
 	<stdio.h>
@@ -148,12 +148,12 @@
 
 1558026141 c:\users\lautaro\desktop\practica tp\practica\utn_input.h
 
-1557317979 source:c:\users\lautaro\desktop\tp3\win_32\utn_input.c
+1560128319 source:c:\users\lautaro\desktop\tp3\win_32\utn_input.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	"UTN_INPUT.h"
 
-1558026141 c:\users\lautaro\desktop\tp3\win_32\utn_input.h
+1560128338 c:\users\lautaro\desktop\tp3\win_32\utn_input.h
 

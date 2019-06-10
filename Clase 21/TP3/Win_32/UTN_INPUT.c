@@ -129,12 +129,6 @@ int esTelefono(char str[], int lowLimit,int highLimit)
 }
 
 
-/*void getString(char mensaje[],char input[])
-{
-    printf("%s",mensaje);
-    scanf ("%s", input);
-}*/
-
 int esSoloLetras(char str[])
 {
    int i=0;
@@ -146,7 +140,32 @@ int esSoloLetras(char str[])
    }
    return 1;
 }
+int getValidStringNumeros(char requestMessage[],char errorMessage[], char errorMessageLenght[],char input[], int lowLimit,int maxLenght)
+{
+    int retorno=-1;
+    char buffer[1024];
 
+    while(1)
+    {
+        if (!getStringNumeros(requestMessage,buffer))
+        {
+            printf ("%s\n",errorMessage);
+            continue;
+        }
+        if(strlen(buffer) > maxLenght || strlen(buffer) < lowLimit)
+        {
+            printf ("%s",errorMessageLenght);
+            continue;
+
+        }
+        retorno=0;
+        strcpy(input,buffer);
+        break;
+
+    }
+
+     return retorno;
+}
 int getStringLetras(char mensaje[],char input[])
 {
     char aux[256];
@@ -213,6 +232,7 @@ int getStringNumeros(char mensaje[],char input[])
         return 1;
     }
     return 0;
+
 }
 
 

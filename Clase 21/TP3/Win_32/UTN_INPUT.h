@@ -1,7 +1,14 @@
 #ifndef UTN_INPUT_H_INCLUDED
 #define UTN_INPUT_H_INCLUDED
 
-
+/** \brief
+ *
+ * \param mensaje[] char
+ * \param input[] char
+ * \return int
+ *
+ */
+int getValidStringNumeros(char requestMessage[],char errorMessage[], char errorMessageLenght[],char input[], int lowLimit,int maxLenght);
 /**
  * \brief Solicita un número al usuario y devuelve el resultado
  * \param mensaje Es el mensaje a ser mostrado

@@ -102,35 +102,50 @@ int mayorIdEstudio(LinkedList* pArrayListEmployee)
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
 
-    char auxString[21];
-    char auxSueldo[21];
-    char auxHoras[21];
-    char auxId[21];
+    char bufferString[21];
+    char bufferSueldo[21];
+    char bufferHoras[21];
+    int auxId;
+    char bufferId[21];
+    int retorno;
     Employee* auxEmployee;
 
-    getValidString("Ingrese Nombre :","ERROR,ingrese el nombre nuevamente (solo letras)","ERROR, se exedio del limite de la cadena\n",auxString,1,51);
-    getStringNumeros("Ingrese Sueldo :",auxSueldo);
-    getStringNumeros("Ingrese Horas :",auxHoras);
-    getStringNumeros("Ingrese Id :",auxId);
+    auxEmployee=employee_new();
 
-    auxEmployee=employee_newParametros(auxId,auxString,auxHoras,auxSueldo);
+    if(pArrayListEmployee!=NULL&&auxEmployee!=NULL)
+    {
+    auxId=mayorIdEstudio(pArrayListEmployee)+1;
+    sprintf(bufferId, "%d", auxId);
+
+
+
+    getValidString("Ingrese Nombre :","ERROR,ingrese el nombre nuevamente (solo letras)","ERROR, se exedio del limite de la cadena\n",bufferString,1,51);
+
+    getValidStringNumeros("Ingrese Sueldo :","ERROR, Ingrese el sueldo nuevamente (solo numeros)","ERROR, se exedio del limite de numerosa\n",bufferSueldo,1,2147483647);
+
+    getValidStringNumeros("Ingrese las horas trabajadas :","ERROR, Ingrese las horas nuevamente (solo numeros)","ERROR, se exedio del limite de numerosa\n",bufferHoras,1,2147483647);
+
+
+
+
+    auxEmployee=employee_newParametros(bufferId,bufferString,bufferHoras,bufferSueldo);
 
 
     ll_add(pArrayListEmployee,auxEmployee);
 
+     retorno=1;
+
+    }
+    else
+    {
+        printf("hubo un error en la carga");
+
+         retorno=0;
+    }
 
 
 
-
-
-
-
-
-
-
-
-
-    return 1;
+    return retorno;
 }
 
 /** \brief Modificar datos de empleado
@@ -154,7 +169,77 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
-    return 1;
+    int auxLegajo;
+    int auxId;
+    int respuesta;
+    int retorno=-1;
+    int existeSocio=0;
+    int len;
+    int contador=0;
+    Employee* auxEmployee;
+
+    len=ll_len(pArrayListEmployee);
+
+    for(int i=0; i<len; i++)
+    {
+
+        auxEmployee=ll_get(pArrayListEmployee,i);
+
+        employee_getId(auxEmployee,&auxId);
+
+        printf("\nLegajo socio %d",auxId);
+
+        contador++;
+
+        if(contador==200)
+        {
+            contador=0;
+            system("pause");
+        }
+
+    }
+
+    printf("\nQue socio queres dar de baja? (Ingresar ID socio) ");
+    fflush(stdin);
+    scanf("%d",&auxLegajo);
+
+
+    for(int i=0; i<len; i++)
+    {
+        auxEmployee=ll_get(pArrayListEmployee,i);
+
+        employee_getId(auxEmployee,&auxId);
+
+        if(auxLegajo==auxId)
+        {
+            existeSocio=1;
+            fflush(stdin);
+            getValidInt("Esta seguro que quiere darle de baja a este socio? <1.Si-2.No>","ERROR, ingrese una opcion valida <1-2>",1,2,&respuesta);
+
+            switch(respuesta)
+            {
+            case 1:
+                ll_remove(pArrayListEmployee,i);
+                retorno=0;
+                printf("Baja Exitosa\n");
+                break;
+            case 2:
+                printf("Baja Cancelada\n");
+                break;
+
+            }
+
+            break;
+        }
+    }
+
+    if(existeSocio==0)
+    {
+        printf("ERROR, el socio no existe\n");
+
+    }
+
+    return retorno;
 }
 
 /** \brief Listar empleados
@@ -188,7 +273,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
         printf("%5d  %10s %10d  %20d\n",idAuxiliar, nombreAuxiliar, horasAuxiliar, sueldoAuxiliar);
         contador++;
 
-        if(contador==298)
+        if(contador==200)
         {
             contador=0;
             system("pause");
@@ -282,7 +367,164 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
         fwrite(this, sizeof(Employee), 1, f);
     }
     fclose(f);
+
     return ok;
-    return 1;
+}
+
+
+
+
+
+int  modificar_Socios(LinkedList* pArrayListEmployee)
+{
+    int auxLegajo;
+    int auxId;
+    int respuesta;
+    int retorno=-1;
+    int existeSocio=0;
+    int len;
+    int contador=0;
+    Employee* auxEmployee;
+
+    len=ll_len(pArrayListEmployee);
+
+    for(int i=0; i<len; i++)
+    {
+
+        auxEmployee=ll_get(pArrayListEmployee,i);
+
+        employee_getId(auxEmployee,&auxId);
+
+        printf("\nLegajo socio %d",auxId);
+
+        contador++;
+
+        if(contador==200)
+        {
+            contador=0;
+            system("pause");
+        }
+
+    }
+
+    printf("\nQue socio queres modificar? (Ingresar Codigo socio) ");
+    fflush(stdin);
+    scanf("%d",&auxLegajo);
+
+    for(int i=0; i<len; i++)
+    {
+        auxEmployee=ll_get(pArrayListEmployee,i);
+
+        employee_getId(auxEmployee,&auxId);
+
+    if(auxLegajo==auxId)
+    {
+
+
+        existeSocio=1;
+
+        fflush(stdin);
+        getValidInt("Esta seguro que quiere modificar a este socio? <1.Si-2.No>","ERROR, ingrese una opcion valida <1-2>",1,2,&respuesta);
+
+        switch(respuesta)
+        {
+        case 1:
+
+            modf_Socios(auxEmployee);
+            retorno=0;
+
+            break;
+        case 2:
+
+            printf("Modificacion cancelada");
+            retorno=-1;
+            break;
+
+        }
+    }
+}
+    if(existeSocio==0)
+    {
+        printf("ERROR, el socio no existe\n");
+    }
+
+
+    return retorno;
+
+}
+
+void modf_Socios(Employee* auxEmployee)
+{
+    int opcion;
+    char auxNewName[31];
+    char auxNewSueldo[31];
+    char auxNewHoras[31];
+
+
+
+
+    do
+    {
+        system("cls");
+        printf("\n1.Modificar Nombre\n");
+        printf("2.Modificar Email\n");
+        printf("3.Modificar Fecha de ingreso\n");
+        printf("4.Salir\n");
+        fflush(stdin);
+        scanf("%d",&opcion);
+
+
+        switch(opcion)
+        {
+        case 1:
+
+            fflush(stdin);
+            getValidString("Ingrese nuevo nombre :","ERROR,ingrese el nombre nuevamente (solo letras)","ERROR, se exedio del limite de la cadena",auxNewName,1,30);
+            stringToUpper(auxNewName);
+
+            employee_setNombre(auxEmployee,auxNewName);
+
+            printf("\nDato modificado\n");
+            break;
+
+        case 2:
+
+            fflush(stdin);
+            getValidStringNumeros("Ingrese nuevo apellido :","ERROR,ingrese el apellido nuevamente (solo letras)","ERROR, se exedio del limite de la cadena",auxNewSueldo,1,2147483647);
+            stringToUpper(auxNewSueldo);
+
+            employee_setHorasTrabajadas(auxEmployee,atoi(auxNewSueldo));
+
+            printf("\nDato modificado\n");
+            break;
+
+        case 3:
+
+            fflush(stdin);
+            getValidStringNumeros("ingrese telefono (debe tener un guion y 6 numeros): ","ERROR, Ingrese el sueldo nuevamente (solo numeros)","ERROR, se exedio del limite de numerosa\n",auxNewHoras,1,2147483647);
+
+            employee_setSueldo(auxEmployee,atoi(auxNewHoras));
+
+            printf("\nDato modificado\n");
+            break;
+
+        case 4:
+
+            printf("REGRESANDO AL MENU PRINCIPAL\n");
+
+            break;
+        default:
+            printf("ERROR!! por favor ingrese una de las opciones validaas <1-7>\n");
+            break;
+
+        }
+
+        fflush(stdin);
+        system("pause");
+        system("cls");
+
+    }
+    while(opcion!=4);
+
 }
 
