@@ -3,7 +3,8 @@
 #include <string.h>
 #include "../inc/LinkedList.h"
 
-
+//nunca hay que preguntar que pNode sea distinto de NULL por los testing
+//almenos en el tp, revisar en el parcial
 static Node* getNode(LinkedList* this, int nodeIndex);
 static int addNode(LinkedList* this, int nodeIndex,void* pElement);
 
@@ -109,7 +110,47 @@ Node* test_getNode(LinkedList* this, int nodeIndex)
  */
 static int addNode(LinkedList* this, int nodeIndex,void* pElement)
 {
-    int returnAux = -1;
+     int returnAux = -1;
+
+    Node* prevNode;
+    Node* nextNode;
+    Node* newNode;
+
+    if( this != NULL)
+    {
+        if(newNode >= 0 && nodeIndex <= ll_len(this))
+        {
+            newNode = (Node*)malloc(sizeof(Node));
+            if(newNode != NULL)
+            {
+                newNode->pElement = pElement;
+                newNode->pNextNode = NULL;
+
+                if(nodeIndex == 0)
+                {
+                    newNode->pNextNode = this->pFirstNode;
+                    this->pFirstNode = newNode;
+                }
+                else
+                {
+                    prevNode = this->pFirstNode;
+                    nextNode = prevNode->pNextNode;
+
+                    while( nodeIndex > 1)
+                    {
+                        prevNode  = nextNode;
+                        nextNode  = prevNode->pNextNode;
+                        nodeIndex--;
+                    }
+
+                    prevNode->pNextNode = newNode;
+                    newNode->pNextNode = nextNode;
+                }
+                this->size++;
+                returnAux = 0;
+            }
+        }
+    }
 
     return returnAux;
 }
@@ -141,6 +182,13 @@ int ll_add(LinkedList* this, void* pElement)
 {
     int returnAux = -1;
 
+    if(this!=NULL)
+    {
+
+    returnAux=addNode(this,ll_len(this),pElement);
+
+    }
+
     return returnAux;
 }
 
@@ -155,6 +203,30 @@ int ll_add(LinkedList* this, void* pElement)
 void* ll_get(LinkedList* this, int index)
 {
     void* returnAux = NULL;
+
+    Node* auxNode =NULL;
+
+
+    if(this!=NULL && index >= 0 && index <ll_len(this))
+    {
+
+        if(index==0)
+        {
+
+           returnAux = this->pFirstNode->pElement;
+
+        }
+        else
+        {
+            auxNode=getNode(this,index);
+
+            returnAux = auxNode->pElement
+            ;
+        }
+
+
+
+    }
 
     return returnAux;
 }
@@ -172,6 +244,17 @@ void* ll_get(LinkedList* this, int index)
 int ll_set(LinkedList* this, int index,void* pElement)
 {
     int returnAux = -1;
+    Node* auxElement;
+
+    if(this!=NULL && index >= 0 && index <ll_len(this))
+    {
+        auxElement=getNode(this,index);
+
+        auxElement->pElement = pElement;
+
+        returnAux=0;
+
+    }
 
     return returnAux;
 }
