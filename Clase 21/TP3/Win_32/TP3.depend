@@ -157,3 +157,50 @@
 
 1560128338 c:\users\lautaro\desktop\tp3\win_32\utn_input.h
 
+1560387938 source:c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 21\tp3\win_32\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+
+1560387938 c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 21\tp3\win_32\employee.h
+
+1560386760 source:c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 21\tp3\win_32\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1560178755 c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 21\tp3\win_32\linkedlist.h
+
+1560391284 c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 21\tp3\win_32\controller.h
+	"Employee.h"
+
+1560319654 source:c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 21\tp3\win_32\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1560314570 c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 21\tp3\win_32\parser.h
+
+1560178755 source:c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 21\tp3\win_32\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1560178755 c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 21\tp3\win_32\utn_input.h
+
+1560388968 source:c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 21\tp3\win_32\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"UTN_INPUT.h"
+
