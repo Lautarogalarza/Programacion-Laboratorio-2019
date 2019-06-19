@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1560913681 source:c:\users\lautaro\desktop\tp3 con tp4\tp3-4\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"UTN_INPUT.h"
+
+1560913573 c:\users\lautaro\desktop\tp3 con tp4\tp3-4\linkedlist.h
+
+1560567527 c:\users\lautaro\desktop\tp3 con tp4\tp3-4\employee.h
+
+1560567527 c:\users\lautaro\desktop\tp3 con tp4\tp3-4\parser.h
+
+1560567527 c:\users\lautaro\desktop\tp3 con tp4\tp3-4\utn_input.h
+
+1560914791 source:c:\users\lautaro\desktop\tp3 con tp4\tp3-4\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"UTN_INPUT.h"
+
+1560913655 source:c:\users\lautaro\desktop\tp3 con tp4\tp3-4\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1560567527 source:c:\users\lautaro\desktop\tp3 con tp4\tp3-4\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1560567527 source:c:\users\lautaro\desktop\tp3 con tp4\tp3-4\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1560914383 source:c:\users\lautaro\desktop\tp3 con tp4\tp3-4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1560567527 c:\users\lautaro\desktop\tp3 con tp4\tp3-4\controller.h
+

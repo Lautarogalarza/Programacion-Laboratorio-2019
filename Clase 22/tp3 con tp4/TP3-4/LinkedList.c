@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../inc/LinkedList.h"
+#include "LinkedList.h"
 
 //nunca hay que preguntar que pNode sea distinto de NULL por los testing
 //almenos en el tp, revisar en el parcial
@@ -86,18 +86,6 @@ static Node* getNode(LinkedList* this, int nodeIndex)
     return pNode;
 }
 
-/** \brief  Permite realizar el test de la funcion getNode la cual es privada
- *
- * \param this LinkedList* Puntero a la lista
- * \param index int Indice del nodo a obtener
- * \return Node* Retorna  (NULL) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
-                        (pElement) Si funciono correctamente
- *
- */
-Node* test_getNode(LinkedList* this, int nodeIndex)
-{
-    return getNode(this, nodeIndex);
-}
 
 
 /** \brief Agrega y enlaza un nuevo nodo a la lista
@@ -154,21 +142,6 @@ static int addNode(LinkedList* this, int nodeIndex,void* pElement)
     }
 
     return returnAux;
-}
-
-
-/** \brief Permite realizar el test de la funcion addNode la cual es privada
- *
- * \param this LinkedList* Puntero a la lista
- * \param nodeIndex int Ubicacion donde se agregara el nuevo nodo
- * \param pElement void* Puntero al elemento a ser contenido por el nuevo nodo
-  * \return int Retorna  (-1) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
-                        ( 0) Si funciono correctamente
- *
- */
-int test_addNode(LinkedList* this, int nodeIndex,void* pElement)
-{
-    return addNode(this,nodeIndex,pElement);
 }
 
 
