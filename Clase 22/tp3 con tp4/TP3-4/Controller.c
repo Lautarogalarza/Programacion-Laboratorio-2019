@@ -367,7 +367,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 }
 
 
-/*int controller_sortEmployee(LinkedList* pArrayListEmployee)
+int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
 system("cls");
     LinkedList* listaClonada;
@@ -382,9 +382,10 @@ system("cls");
         printf("///////////////ORDENAR EMPLEADOS///////////////\n\n");
 
         printf("\n1.Ordedar por Nombre\n");
-        printf("2.Ordedar por Sueldo\n");
-        printf("3.Ordedar por horas\n");
-        printf("4.Salir\n");
+        printf("2.Ordedar por Id\n");
+        printf("3.Ordedar por Sueldo\n");
+        printf("4.Ordedar por Horas\n");
+        printf("5.Salir\n");
         fflush(stdin);
         scanf("%d",&opcion);
 
@@ -420,7 +421,33 @@ system("cls");
         }
 
         break;
-    case 2:
+
+        case 2:
+
+        printf("\n1.ORDENAR DESCENDENTEMENTE\n");
+        printf("\n2.ORDENAR ASCENDENTEMENTE\n");
+        getValidInt("Ingrese una opcion :","error ingrese una opcion valida <1-2>",1,2,&opcionOrden);
+
+         if(opcionOrden==1)
+        {
+               printf("ORDENANDO....\n");
+
+         retorno = ll_sort(listaClonada,employee_compararPorId,1);
+         controller_ListEmployee(listaClonada);
+
+        }
+        else if(opcionOrden==2)
+        {
+         printf("ORDENANDO....\n");
+
+             retorno = ll_sort(listaClonada,employee_compararPorId,0);
+            controller_ListEmployee(listaClonada);
+        }
+
+
+        break;
+
+    case 3:
 
         printf("\n1.ORDENAR DESCENDENTEMENTE\n");
         printf("\n2.ORDENAR ASCENDENTEMENTE\n");
@@ -444,7 +471,7 @@ system("cls");
 
 
         break;
-    case 3:
+    case 4:
 
          printf("\n1.ORDENAR DESCENDENTEMENTE\n");
         printf("\n2.ORDENAR ASCENDENTEMENTE\n");
@@ -468,7 +495,7 @@ system("cls");
 
 
         break;
-    case 4:
+    case 5:
 
         printf("\nREGRESANDO AL MENU PRINCIPAL\n");
 
@@ -483,11 +510,13 @@ system("cls");
         system("cls");
 
 
-    }while(opcion!=4);
+    }while(opcion!=5);
+
+    ll_deleteLinkedList(listaClonada);
 
 
     return retorno;
-}*/
+}
 
 
 int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)

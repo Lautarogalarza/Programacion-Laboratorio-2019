@@ -633,39 +633,25 @@ int ll_sort(LinkedList* this, int (*pFunc)(void*,void*), int order)
     void* pAux;
     int i;
     int j;
-    int resultado;
+
     if( this != NULL && pFunc != NULL && order >= 0 && order <= 1)
     {
         for(i=0; i< (ll_len(this)-1) ; i++)
         {
             for(j= i+1; j < ll_len(this); j++)
             {
-                resultado=pFunc(ll_get(this,i), ll_get(this,j));
-
-
-                switch(order)
-                {
-                case 1:
-
-                if(resultado == 1)
+                if(order == 1 && pFunc(ll_get(this,i), ll_get(this,j)) > 0)
                 {
                     pAux = ll_get(this,i);
                     ll_set(this, i, ll_get(this, j));
                     ll_set(this, j, pAux);
                 }
-
-                    break;
-                case 2:
-                if(resultado == -1)
+                else if(order == 0 && pFunc(ll_get(this,i), ll_get(this,j)) < 0)
                 {
                     pAux = ll_get(this,i);
                     ll_set(this, i, ll_get(this, j));
                     ll_set(this, j, pAux);
                 }
-
-                    break;
-                }
-
             }
         }
 
@@ -674,3 +660,5 @@ int ll_sort(LinkedList* this, int (*pFunc)(void*,void*), int order)
 
     return returnAux;
 }
+
+

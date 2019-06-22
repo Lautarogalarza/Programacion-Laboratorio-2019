@@ -287,6 +287,29 @@ void employee_setEmployee(Employee* auxEmployee)
      return aux;
  }
 
+
+ int employee_compararPorId(void* personaA, void* personaB)
+ {
+     Employee* auxA =( Employee*)personaA;
+     Employee* auxB =(Employee*)personaB;
+     int aux;
+
+     if(auxA->id>auxB->id)
+     {
+         aux=1;// si es mayor
+     }
+     else if(auxB->id>auxA->id)
+     {
+         aux=-1; // si es menor
+     }
+     else
+     {
+         aux=0; // si es igual
+     }
+
+     return aux;
+ }
+
  int employee_compararPorNombre(void* personaA, void* personaB)
  {
      Employee* auxA =( Employee*)personaA;

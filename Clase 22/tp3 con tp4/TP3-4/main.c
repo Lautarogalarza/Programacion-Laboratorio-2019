@@ -135,7 +135,7 @@ int main()
             break;
         case 7:
 
-           /* if(controller_listExist(listaEmpleados)==1)
+            if(controller_listExist(listaEmpleados)==1)
             {
 
                 if(controller_sortEmployee(listaEmpleados)==0)
@@ -154,7 +154,7 @@ int main()
             else
             {
                 printf("\nERROR...Por favor cargue elementos a la lista antes de ordenar\n");
-            }*/
+            }
 
             break;
         case 8:

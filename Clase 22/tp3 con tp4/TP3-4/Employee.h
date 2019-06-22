@@ -127,4 +127,14 @@ int employee_compararPorHoras(void* personaA, void* personaB);
 int employee_compararPorNombre(void* personaA, void* personaB);
 
 
+ /** \brief
+  *
+  * \param personaA void*
+  * \param personaB void*
+  * \return int
+  *
+  */
+ int employee_compararPorId(void* personaA, void* personaB);
+
+
 #endif // employee_H_INCLUDED

@@ -86,6 +86,18 @@ static Node* getNode(LinkedList* this, int nodeIndex)
     return pNode;
 }
 
+/** \brief  Permite realizar el test de la funcion getNode la cual es privada
+ *
+ * \param this LinkedList* Puntero a la lista
+ * \param index int Indice del nodo a obtener
+ * \return Node* Retorna  (NULL) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
+                        (pElement) Si funciono correctamente
+ *
+ */
+Node* test_getNode(LinkedList* this, int nodeIndex)
+{
+    return getNode(this, nodeIndex);
+}
 
 
 /** \brief Agrega y enlaza un nuevo nodo a la lista
@@ -142,6 +154,21 @@ static int addNode(LinkedList* this, int nodeIndex,void* pElement)
     }
 
     return returnAux;
+}
+
+
+/** \brief Permite realizar el test de la funcion addNode la cual es privada
+ *
+ * \param this LinkedList* Puntero a la lista
+ * \param nodeIndex int Ubicacion donde se agregara el nuevo nodo
+ * \param pElement void* Puntero al elemento a ser contenido por el nuevo nodo
+  * \return int Retorna  (-1) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
+                        ( 0) Si funciono correctamente
+ *
+ */
+int test_addNode(LinkedList* this, int nodeIndex,void* pElement)
+{
+    return addNode(this,nodeIndex,pElement);
 }
 
 
@@ -533,7 +560,7 @@ LinkedList* ll_subList(LinkedList* this,int from,int to)
     void* auxElement;
 
 
-    if(this!=NULL && from>=0 && from<=ll_len(this) && to>=0 && to<=ll_len(this) )
+    if(this!=NULL && from>=0 && from<=ll_len(this) && to>0 && to<=ll_len(this) )
     {
         cloneArray=ll_newLinkedList();
 
@@ -603,8 +630,35 @@ LinkedList* ll_clone(LinkedList* this)
 int ll_sort(LinkedList* this, int (*pFunc)(void*,void*), int order)
 {
     int returnAux =-1;
+    void* pAux;
+    int i;
+    int j;
+
+    if( this != NULL && pFunc != NULL && order >= 0 && order <= 1)
+    {
+        for(i=0; i< (ll_len(this)-1) ; i++)
+        {
+            for(j= i+1; j < ll_len(this); j++)
+            {
+                if(order == 1 && pFunc(ll_get(this,i), ll_get(this,j)) > 0)
+                {
+                    pAux = ll_get(this,i);
+                    ll_set(this, i, ll_get(this, j));
+                    ll_set(this, j, pAux);
+                }
+                else if(order == 0 && pFunc(ll_get(this,i), ll_get(this,j)) < 0)
+                {
+                    pAux = ll_get(this,i);
+                    ll_set(this, i, ll_get(this, j));
+                    ll_set(this, j, pAux);
+                }
+            }
+        }
+
+        returnAux = 0;
+    }
 
     return returnAux;
-
 }
+
 
