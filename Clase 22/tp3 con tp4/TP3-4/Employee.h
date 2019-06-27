@@ -136,5 +136,13 @@ int employee_compararPorNombre(void* personaA, void* personaB);
   */
  int employee_compararPorId(void* personaA, void* personaB);
 
+ int employee_filtrarPorSalario(void* persona);
+
+int employee_filtrarPorId(void* persona);
+
+int employee_filtrarPorNombre(void* persona);
+
+int employee_filtrarPorHoras(void* persona);
+
 
 #endif // employee_H_INCLUDED

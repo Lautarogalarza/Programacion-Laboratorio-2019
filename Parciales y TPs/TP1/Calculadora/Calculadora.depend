@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1554251198 source:c:\users\lautaro\desktop\nueva carpeta (3)\tp1\calculadora\function.c
+	<stdio.h>
+	<stdlib.h>
+	"Function.h"
+
+1554257165 source:c:\users\lautaro\desktop\nueva carpeta (3)\tp1\calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Function.h"
+
+1554257754 c:\users\lautaro\desktop\nueva carpeta (3)\tp1\calculadora\function.h
+
+1554345288 source:c:\users\lautaro\desktop\nueva carpeta (3)\tp_laboratorio_1\tp1\calculadora\function.c
+	<stdio.h>
+	<stdlib.h>
+	"Function.h"
+	<ctype.h>
+
+1554345288 c:\users\lautaro\desktop\nueva carpeta (3)\tp_laboratorio_1\tp1\calculadora\function.h
+
+1554513874 source:c:\users\lautaro\desktop\nueva carpeta (3)\tp_laboratorio_1\tp1\calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"Function.h"
+

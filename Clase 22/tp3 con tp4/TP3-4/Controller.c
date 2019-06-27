@@ -144,10 +144,12 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
 
 
         getValidString("Ingrese Nombre :","ERROR,ingrese el nombre nuevamente (solo letras)","ERROR, se exedio del limite de la cadena\n",bufferString,1,51);
+        stringToUpper(bufferString);
 
-        getValidStringNumeros("Ingrese Sueldo :","ERROR, Ingrese el sueldo nuevamente (solo numeros)","ERROR, se exedio del limite de numerosa\n",bufferSueldo,1,2147483647);
+        getValidStringNumeros("Ingrese Sueldo :","ERROR, Ingrese el sueldo nuevamente (solo numeros)","ERROR, se exedio del limite de numerosa\n",bufferSueldo,1,10);
 
-        getValidStringNumeros("Ingrese las horas trabajadas :","ERROR, Ingrese las horas nuevamente (solo numeros)","ERROR, se exedio del limite de numerosa\n",bufferHoras,1,2147483647);
+        getValidStringNumeros("Ingrese las horas trabajadas :","ERROR, Ingrese las horas nuevamente (solo numeros)","ERROR, se exedio del limite de numerosa\n",bufferHoras,1,10);
+
 
 
         auxEmployee=employee_newParametros(bufferId,bufferString,bufferHoras,bufferSueldo);
@@ -159,8 +161,6 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
     }
     else
     {
-        printf("hubo un error en la carga");
-
         retorno=0;
     }
 
@@ -220,7 +220,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
                     retorno=1;
                     break;
                 case 2:
-                    printf("Modificacion cancelada");
+                    retorno=-1;
                     break;
 
                 }
@@ -261,6 +261,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 
     if(pArrayListEmployee!=NULL && auxEmployee!=NULL)
     {
+        system("cls");
         printf("\nQue socio queres dar de baja? (Ingresar ID socio) ");
         fflush(stdin);
         scanf("%d",&modfId);
@@ -279,7 +280,9 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
                 employee_getHorasTrabajadas(auxEmployee,&auxHoras);
                 employee_getSueldo(auxEmployee,&auxSueldo);
 
-                printf("\n\n%d,%s,%d,%d\n\n",auxId,auxNombre,auxHoras,auxSueldo);
+                puts("[ID]\t[NOMBRE]\t[HS TRABAJADAS]\t\t[SUELDO]\n");
+
+                printf("%5d  %10s %10d  %20d\n\n",auxId,auxNombre,auxHoras,auxSueldo);
 
                 existeEmpleado=0;
                 fflush(stdin);
@@ -290,12 +293,10 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
                 case 1:
                     ll_remove(pArrayListEmployee,i);
                     free(auxEmployee);
-                    printf("Baja Exitosa\n");
                     retorno=1;
                     break;
                 case 2:
-                    printf("Baja Cancelada\n");
-                    retorno=0;
+                    retorno=-1;
                     break;
                 }
 
@@ -331,6 +332,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 
     if(empleado!=NULL && pArrayListEmployee!=NULL)
     {
+        system("cls");
         puts(" [ID]\t[NOMBRE]\t[HS TRABAJADAS]\t\t[SUELDO]\n\n");
 
         for(int i=0; i < len; i++)
@@ -594,6 +596,75 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
     fclose(Pfile);
     free(auxEmployee);
     free(Pfile);
+
+    return retorno;
+}
+
+int controller_filter(LinkedList* pArrayListEmployee)
+{
+    int retorno = -1;
+    int opcion;
+    LinkedList* listaFiltrada;
+    int respuesta;
+
+        printf("\n1.Horas trabajadas mayores a 150\n");
+        printf("2.Id mayor a 10\n");
+        printf("3.Nombre por debajo de H\n");
+        printf("4.Salario mayor a 20.000\n");
+        fflush(stdin);
+        scanf("%d",&opcion);
+
+    switch(opcion)
+    {
+    case 1:
+        listaFiltrada = ll_filter(pArrayListEmployee, employee_filtrarPorHoras);
+        printf("Filtro: Horas trabajadas mayores a 150 ");
+        break;
+    case 2:
+        listaFiltrada = ll_filter(pArrayListEmployee, employee_filtrarPorId);
+        printf("Filtro: Id mayor a 10 ");
+        break;
+    case 3:
+        listaFiltrada = ll_filter(pArrayListEmployee, employee_filtrarPorNombre);
+        printf("Filtro: Nombre por debajo de H ");
+        break;
+    case 4:
+        listaFiltrada = ll_filter(pArrayListEmployee, employee_filtrarPorSalario);
+        printf("Filtro: salario mayo a 20.000");
+        break;
+    default:
+       printf("ERROR..Ingrese una opcion correcta <1-4>\n");
+        break;
+    }
+
+    if(listaFiltrada != NULL)
+    {
+        retorno = 1;
+        if(ll_len(listaFiltrada)>0)
+        {
+            controller_ListEmployee(listaFiltrada);
+           getValidInt("Desea guardar la lista filtrada en 'filteredData.csv?' <1-2>: ","error ingrese una opcion valida <1-2>",1,2,&respuesta);
+
+            if(respuesta == 1)
+            {
+                controller_saveAsText("filteredData.csv", listaFiltrada);
+            }
+            else
+            {
+                printf("No se guardo la lista \n");
+            }
+        }
+
+        else
+        {
+            printf("Ningun empleado cumple con el criterio del filtro\n");
+        }
+    }
+
+    else
+    {
+        retorno=-1;
+    }
 
     return retorno;
 }

@@ -1,0 +1,112 @@
+# depslib dependency file v1.0
+1556372798 source:d:\galarza\programacion-laboratorio-2019\clase 12\practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Empleados.h"
+
+1556372509 d:\galarza\programacion-laboratorio-2019\clase 12\practica\empleados.h
+
+1556376708 source:d:\galarza\programacion-laboratorio-2019\clase 12\practica\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Empleados.h"
+
+1556945306 source:c:\users\lautaro\desktop\32bit\programacion-laboratorio-2019-master\clase 12\practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Empleados.h"
+
+1556945161 c:\users\lautaro\desktop\32bit\programacion-laboratorio-2019-master\clase 12\practica\empleados.h
+	"input.h"
+
+1556945972 source:c:\users\lautaro\desktop\32bit\programacion-laboratorio-2019-master\clase 12\practica\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Empleados.h"
+
+1556944431 source:c:\users\lautaro\desktop\32bit\programacion-laboratorio-2019-master\clase 12\practica\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"input.h"
+
+1556941944 c:\users\lautaro\desktop\32bit\programacion-laboratorio-2019-master\clase 12\practica\input.h
+
+1556976433 source:d:\galarza\programacion-laboratorio-2019-master\clase 12\practica\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Empleados.h"
+
+1556976206 d:\galarza\programacion-laboratorio-2019-master\clase 12\practica\empleados.h
+	"input.h"
+
+1556973861 d:\galarza\programacion-laboratorio-2019-master\clase 12\practica\input.h
+
+1556976476 source:d:\galarza\programacion-laboratorio-2019-master\clase 12\practica\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"input.h"
+
+1556976227 source:d:\galarza\programacion-laboratorio-2019-master\clase 12\practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Empleados.h"
+
+1557122969 source:c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 12\clase 12\practica\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Empleados.h"
+
+1557124815 c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 12\clase 12\practica\empleados.h
+	"UTN_INPUT.h"
+
+1556983142 c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 12\clase 12\practica\input.h
+
+1556983142 source:c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 12\clase 12\practica\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"input.h"
+
+1557124499 source:c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 12\clase 12\practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Empleados.h"
+
+1557097158 c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 12\clase 12\practica\utn_input.h
+
+1557097158 source:c:\users\lautaro\desktop\programacion-laboratorio-2019-master\clase 12\clase 12\practica\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+

@@ -87,3 +87,5 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee);
  *
  */
 int controller_listExist(LinkedList* pArrayListEmployee);
+
+int controller_filter(LinkedList* pArrayListEmployee);

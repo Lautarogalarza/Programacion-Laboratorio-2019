@@ -320,3 +320,67 @@ void employee_setEmployee(Employee* auxEmployee)
 
      return aux;
  }
+
+
+ int employee_filtrarPorHoras(void* persona)
+ {
+  int retorno = 0;
+  Employee* auxEmployee;
+  if(persona != NULL)
+{
+    auxEmployee = (Employee*) persona;
+
+    if(auxEmployee->horasTrabajadas > 150)
+    {
+      retorno = 1;
+    }
+  }
+  return retorno;
+}
+
+int employee_filtrarPorSalario(void* persona)
+ {
+  int retorno = 0;
+  Employee* auxEmployee;
+  if(persona != NULL)
+{
+    auxEmployee = (Employee*) persona;
+
+    if(auxEmployee->sueldo > 20000)
+    {
+      retorno = 1;
+    }
+  }
+  return retorno;
+}
+
+int employee_filtrarPorId(void* persona)
+{
+  int retorno = 0;
+  Employee* auxEmployee;
+  if(persona != NULL)
+{
+    auxEmployee = (Employee*) persona;
+
+    if(auxEmployee->id > 10)
+    {
+      retorno = 1;
+    }
+  }
+  return retorno;
+}
+
+int employee_filtrarPorNombre(void* persona)
+{
+  int retorno = 0;
+  Employee* auxEmployee;
+  if(persona != NULL)
+ {
+    auxEmployee = (Employee*) persona;
+    if(strcmp(auxEmployee->nombre,"I")>=0)
+    {
+      retorno = 1;
+    }
+  }
+  return retorno;
+}

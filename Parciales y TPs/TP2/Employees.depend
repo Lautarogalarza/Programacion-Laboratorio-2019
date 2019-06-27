@@ -1,0 +1,101 @@
+# depslib dependency file v1.0
+1557076738 source:c:\users\lautaro\desktop\employees\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1557075002 source:c:\users\lautaro\desktop\employees\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"ArrayEmployees.h"
+
+1557073238 c:\users\lautaro\desktop\employees\arrayemployees.h
+	"UTN_INPUT.h"
+
+1557013786 c:\users\lautaro\desktop\employees\utn_input.h
+
+1557013786 source:c:\users\lautaro\desktop\employees\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1557076738 source:c:\users\lautaro\desktop\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1557073238 c:\users\lautaro\desktop\tp2\arrayemployees.h
+	"UTN_INPUT.h"
+
+1557013786 c:\users\lautaro\desktop\tp2\utn_input.h
+
+1557013786 source:c:\users\lautaro\desktop\tp2\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1557078523 source:c:\users\lautaro\desktop\tp2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"ArrayEmployees.h"
+
+1557094751 source:c:\users\lautaro\desktop\nueva carpeta\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1557097021 c:\users\lautaro\desktop\nueva carpeta\tp2\arrayemployees.h
+	"UTN_INPUT.h"
+
+1557095564 c:\users\lautaro\desktop\nueva carpeta\tp2\utn_input.h
+
+1557092611 source:c:\users\lautaro\desktop\nueva carpeta\tp2\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1557094698 source:c:\users\lautaro\desktop\nueva carpeta\tp2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"ArrayEmployees.h"
+
+1557539417 source:c:\users\lautaro\desktop\tp_laboratorio_1-master\tp2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"ArrayEmployees.h"
+
+1557538885 c:\users\lautaro\desktop\tp_laboratorio_1-master\tp2\arrayemployees.h
+	"UTN_INPUT.h"
+
+1557124998 c:\users\lautaro\desktop\tp_laboratorio_1-master\tp2\utn_input.h
+
+1557124998 source:c:\users\lautaro\desktop\tp_laboratorio_1-master\tp2\utn_input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1557539560 source:c:\users\lautaro\desktop\tp_laboratorio_1-master\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+

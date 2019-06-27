@@ -166,6 +166,12 @@ int getValidString(char requestMessage[],char errorMessage[], char errorMessageL
  */
 int getValidFloat(char requestMessage[],char errorMessage[], float lowLimit, float hiLimit,float* input);
 
-
+/** \brief
+ *
+ * \param void
+ * \return void
+ *
+ */
+void menu(void);
 
 #endif // UTN_INPUT_H_INCLUDED
